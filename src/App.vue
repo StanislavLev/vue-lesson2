@@ -2,10 +2,8 @@
   <div id="app-root">
     <header><h1>{{title}}</h1></header>
     <div class="puppy-name-grid">
-      <puppy v-for="(puppy_name, index) in names" v-bind:name="puppy_name" v-bind:key="index" v-on:changeURL="updateURL($event)"></puppy>
+      <puppy v-for="(puppy_name, index) in names" v-bind:name="puppy_name" v-bind:index="index+1" v-bind:key="index"></puppy>
     </div>
-    <h2>Hi, I'm {{current_puppy}}</h2>
-    <img v-bind:src="puppy_url" alt="puppy image" />  
   </div>
 </template>
 
@@ -19,16 +17,8 @@ export default {
   },
   data() {
     return {
-      title: "Hello VUE! Puppy slideshow!",
-      current_puppy: 'Lucy',
-      puppy_url : "http://www.placepuppy.net/1p/760/475",
+      title: "Puppy Story Tellers!",
       names: ['Lucy', 'Rocky', 'Daisy', 'Buddy', 'Lola', 'Luna', 'Bear', 'Duke', 'Sophie', 'Tucker']
-    }
-  },
-  methods: {
-    updateURL(puppy_name) {
-      this.current_puppy = puppy_name;
-      this.puppy_url = "http://www.placepuppy.net/" + (this.names.indexOf(puppy_name)+1) + "p/760/475";
     }
   }
 }
