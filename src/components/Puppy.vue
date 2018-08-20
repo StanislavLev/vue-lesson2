@@ -1,8 +1,8 @@
 <template>
-  <div class="puppy-section"> 
+  <a class="puppy-section" :href="link"> 
     <h3>Hi I'm {{name}} and this is my story...</h3>
-    <p><img class="item1" v-bind:src="imgURL" alt="puppy image" />{{story}} </p>
-  </div>
+    <p><img :src="imgURL" alt="puppy image" />{{summary}} </p>
+  </a>
 </template>
 
 <script>
@@ -12,7 +12,11 @@ export default {
       type: String,
       required: true
     },
-    story: {
+    summary: {
+      type: String,
+      required: true
+    },
+    link: {
       type: String,
       required: true
     },
@@ -30,7 +34,10 @@ export default {
 </script>
 
 <style scoped>
-
+a {
+  text-decoration: none;
+  color: black;
+}
 h3 {
   text-align: center;
   margin-bottom: 0;
