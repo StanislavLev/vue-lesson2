@@ -1,5 +1,5 @@
 <template>
-  <a class="puppy-section" :href="link"> 
+  <a class="puppy-section" :href="storyLink"> 
     <h3>Hi I'm {{name}} and this is my story...</h3>
     <p><img :src="imgURL" alt="puppy image" />{{summary}} </p>
   </a>
@@ -16,7 +16,7 @@ export default {
       type: String,
       required: true
     },
-    link: {
+    storyLink: {
       type: String,
       required: true
     },
